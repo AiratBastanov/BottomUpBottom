@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:id="@+id/layout_bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MusicBottomSheetFragment">
+    <!-- layout_top -->
+    <!-- layout_top -->
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <!--app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"-->
+
+        <ImageView
+            android:id="@+id/simple_image"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/baseline_videogame_asset_24"
+            app:tint="#32CD32" />
+
+        <TextView
+            android:id="@+id/simple_text"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Text and image in linear layout"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <!-- layout_expanded -->
+    <LinearLayout
+        android:id="@+id/layout_expanded"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/black"
+       >
+        <!--app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/notsimple_image"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                app:tint="#32CD32" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:gravity="center"
+                android:text="Second Line"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:gravity="center"
+                android:text="Third Line"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Text about something"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:gravity="center"
+            android:text="Some bigger element, for example bigger RecyclerView"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+   <!-- <LinearLayout
+        android:id="@+id/bottom_sheet_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="serif"
+            android:padding="24dp"
+            android:textSize="18sp"
+            android:text="Welcome Back. Please Login"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/bottom_sheet_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/baseline_videogame_asset_24" />
+    </LinearLayout>
+
+    &lt;!&ndash; Контейнер 2 с изображением &ndash;&gt;
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/teal_200"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:filterTouchesWhenObscured="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="login"
+                android:textSize="36sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor= "@color/purple_500"
+                    android:fontFamily="serif"
+                    android:text="username"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="serif"
+                    android:hint="enter_email_address"
+                    android:inputType="textEmailAddress" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor= "@color/purple_500"
+                    android:fontFamily="serif"
+                    android:text="password"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="serif"
+                    android:hint="enter_password"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="serif"
+                android:text="login"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--<LinearLayout
+        android:id="@+id/container1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        app:layout_constraintBottom_toTopOf="@+id/container2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0"
+       >
+        <TextView
+            android:id="@+id/artist_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="22sp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            />
+
+        <TextView
+            android:id="@+id/txt_song_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textSize="22sp" />
+        <LinearLayout
+            android:id="@+id/mainbuttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/replay10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+            <ImageButton
+                android:id="@+id/repeatmusic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+            <ImageButton
+                android:id="@+id/imageSkipPrevious"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+            <ImageButton
+                android:id="@+id/play_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+
+            <ImageButton
+                android:id="@+id/pause_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_videogame_asset_24"
+                android:visibility="gone"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+
+            <ImageButton
+                android:id="@+id/imageSkipNext"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+            <ImageButton
+                android:id="@+id/shuffle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+            <ImageButton
+                android:id="@+id/forward_10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/baseline_videogame_asset_24"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textCurrentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#212121"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <SeekBar
+                android:id="@+id/playerSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/textTotalDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#212121"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    &lt;!&ndash; Второй контейнер с двумя кнопками &ndash;&gt;
+    <LinearLayout
+        android:id="@+id/container2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toBottomOf="@+id/container1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button 1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button 2" />
+    </LinearLayout>-->
+
+</RelativeLayout>
