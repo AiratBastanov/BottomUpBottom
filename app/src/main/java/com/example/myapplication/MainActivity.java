@@ -17,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout container1;
     private BottomSheetDialog bottomSheetDialog;
     private TextView bottomSheetContent;
+    private PopupWindow popupWindow;
+    private BottomNavigationView bottomNavigationView;
 
 
 
@@ -47,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
         MusicBottomSheetFragment bottomSheetFragment = new MusicBottomSheetFragment();
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
+
 
     }
 
