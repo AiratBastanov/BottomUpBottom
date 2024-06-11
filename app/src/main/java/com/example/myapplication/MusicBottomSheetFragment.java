@@ -26,11 +26,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 public class MusicBottomSheetFragment extends BottomSheetDialogFragment {
 
     private View rootView;
-    private LinearLayout topLinear,expendedLinear;
+    private LinearLayout topLinear,expendedLinear, layoutBottomNavigation;
     BottomSheetBehavior bottomSheetBehavior;
     private BottomNavigationView bottomNavigation;
     private FrameLayout frameLayout;
     int peekHeight;
+    private BottomNavigationView bottomNavigationView;
 
 
     @NonNull
@@ -39,7 +40,8 @@ public class MusicBottomSheetFragment extends BottomSheetDialogFragment {
         rootView=inflater.inflate(R.layout.fragment_bottom_sheet, container, false);
         topLinear = rootView.findViewById(R.id.layout_top);
         expendedLinear = rootView.findViewById(R.id.layout_expanded);
-
+        //layoutBottomNavigation = rootView.findViewById(R.id.layout_bottomNavigation);
+        bottomNavigationView = rootView.findViewById(R.id.bottomNavigation);
         return rootView;
     }
     @Override
@@ -96,14 +98,15 @@ public class MusicBottomSheetFragment extends BottomSheetDialogFragment {
     private void handleBottomSheetState(int newState) {
         if (newState == BottomSheetBehavior.STATE_EXPANDED) {
             topLinear.setVisibility(View.GONE);
+            //layoutBottomNavigation.setVisibility(View.GONE);
             expendedLinear.setVisibility(View.VISIBLE);
-            animateBottomNavigationView(true);
         } else if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
             topLinear.setVisibility(View.VISIBLE);
+            //layoutBottomNavigation.setVisibility(View.VISIBLE);
             expendedLinear.setVisibility(View.GONE);
-            animateBottomNavigationView(false);
         } else if (newState == BottomSheetBehavior.STATE_HALF_EXPANDED) {
             topLinear.setVisibility(View.GONE);
+            //layoutBottomNavigation.setVisibility(View.GONE);
             expendedLinear.setVisibility(View.VISIBLE);
             BottomSheetBehavior.from((View) getView().getParent()).setState(BottomSheetBehavior.STATE_EXPANDED);
         }
@@ -129,15 +132,11 @@ public class MusicBottomSheetFragment extends BottomSheetDialogFragment {
                 new LinearLayout.LayoutParams((int) currentSize, LinearLayout.LayoutParams.MATCH_PARENT));
     }
 
-    private void animateBottomNavigationView(boolean isShow) {
-        View bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigation);
-
-        int height = bottomNavigationView.getHeight();
-
-        if (isShow) {
-            bottomNavigationView.animate().translationY(0).setDuration(300);
+    private void animateBottomNavigationView(boolean show) {
+        if (show) {
+            layoutBottomNavigation.animate().translationY(0).alpha(1).setDuration(600).start();
         } else {
-            bottomNavigationView.animate().translationY(height).setDuration(300);
+            layoutBottomNavigation.animate().translationY(layoutBottomNavigation.getHeight()).alpha(0).setDuration(300).start();
         }
     }
 }
